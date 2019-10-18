@@ -12,17 +12,17 @@ import pickle
 app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 server = app.server
 
-file = open('resources/AAPL_final_model.pkl', 'rb')
+file = open('AAPL_final_model.pkl', 'rb')
 model= pickle.load(file)
 file.close()
 # define the new observation from the chosen values
 new_obs =[[2, 1, 0, 2, 1, 2]]
 my_prediction = model.predict(new_obs)
 
-app.layout = html.Div(
+app.layout = html.Div([
     html.Div(children=[f'the prediction is {my_prediction}']),
     html.A('Code on Github', href='https://github.com/austinlasseter/Final_project'),
-)
+])
 
 
 
