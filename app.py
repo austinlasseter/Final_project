@@ -20,7 +20,7 @@ new_obs =[[2, 1, 0, 2, 1, 2]]
 my_prediction = model.predict(new_obs)
 
 app.layout = html.Div([
-    html.Div(children=[f'the prediction is {my_prediction}']),
+    html.Div(children=[f'the prediction is {round(my_prediction[0], 2)}']),
     html.A('Code on Github', href='https://github.com/austinlasseter/Final_project'),
 ])
 
